@@ -1,15 +1,48 @@
+![Logo](https://i.ytimg.com/vi/IKizGvE-T7E/maxresdefault.jpg)
 
-[![Build Status](https://travis-ci.org/daniel/ze-crypto.svg?branch=master)](https://travis-ci.org/daniel/ze-crypto)
-# ze-crypto
+# ዘcrypto
 
-## Usage
+Crypto coin price tracker app that allows user to get specific information about any crypto coin.
 
-```sh
-$ npm install
-$ BOT_TOKEN='123:......' npm run dev
+Follow or watch given coin's price change and notify the subscribed user.
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/danielddemissie/Ze-crypto.git
 ```
 
-```sh
-$ yarn
-$ BOT_TOKEN='123:......' yarn dev
+Go to the project directory
+
+```bash
+  cd Ze-crypto
 ```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  BOT_TOKEN='TOKEN' npm start
+```
+
+To visit telegram bot
+
+```bash
+@dmynewbot
+```
+
+## Acknowledgements
+
+- [CryptoCompare api](https://www.cryptocompare.com/coins/guides/how-to-use-our-api/)
+- [μ-bot](https://www.npmjs.com/package/micro-bot)
+
+## Support
+
+For support, email danielddemissie@gmail.com
