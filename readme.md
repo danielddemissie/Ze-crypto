@@ -1,4 +1,5 @@
-![Logo](https://i.ytimg.com/vi/IKizGvE-T7E/maxresdefault.jpg)
+![Logo](https://ibb.co/tQT6MMG)
+
 
 # ዘcrypto
 
