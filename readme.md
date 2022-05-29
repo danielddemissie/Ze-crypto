@@ -1,4 +1,4 @@
-![Logo](https://i.ytimg.com/vi/IKizGvE-T7E/maxresdefault.jpg)
+![Logo](https://i.ibb.co/JmwTRR1/photo-2022-02-14-17-30-26.jpg)
 
 # ዘcrypto
 
