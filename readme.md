@@ -1,5 +1,4 @@
-![Logo](https://ibb.co/tQT6MMG)
-
+![Logo](https://i.ibb.co/JmwTRR1/photo-2022-02-14-17-30-26.jpg)
 
 # ዘcrypto
 
