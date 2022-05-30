@@ -1,9 +1,9 @@
 const axios = require('axios');
 
 const myWatchList = (bot, followList) => {
-  return bot.action('F-list', async (ctx) => {
+  return bot.hears('My Watch List', (ctx) => {
     try {
-      let username = ctx.update.callback_query.from.first_name;
+      let username = ctx.update.message.from.first_name;
       let sendData = 'EmptyList';
       if (followList[username]) {
         followList[username].length > 0
@@ -34,7 +34,6 @@ const myWatchList = (bot, followList) => {
           }
         );
       }
-      ctx.answerCbQuery();
     } catch (error) {
       console.log('Error', error);
       ctx.reply('waitting...');
@@ -43,8 +42,8 @@ const myWatchList = (bot, followList) => {
 };
 
 const toWatchList = (bot) => {
-  return bot.action('follow', async (ctx) => {
-    ctx.editMessageText('Please choose coin to watch.', {
+  return bot.hears('Watch Crypto', (ctx) => {
+    ctx.reply('Please choose coin to watch.', {
       reply_markup: {
         inline_keyboard: [
           [
@@ -61,7 +60,7 @@ const toWatchList = (bot) => {
         ],
       },
     });
-    await ctx.answerCbQuery();
+    ctx.answerCbQuery();
   });
 };
 

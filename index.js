@@ -1,5 +1,6 @@
 const Composer = require('telegraf/composer');
 const session = require('telegraf/session');
+
 require('dotenv').config();
 
 const { getTop10List, getPriceOfTopCoins } = require('./src/topCoins');
