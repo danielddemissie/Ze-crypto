@@ -7,7 +7,7 @@ const startBot = (bot) => {
           ['Show Prices', 'Watch Crypto'],
           ['Popular', 'My Watch List'],
         ],
-        one_time_keyboard: true,
+        one_time_keyboard: false,
         resize_keyboard: true,
       },
     });

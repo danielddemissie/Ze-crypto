@@ -1,2 +1,2 @@
-worker: micro-bot -p $PORT
 web: micro-bot -p $PORT
+worker: telegraf index.js 
