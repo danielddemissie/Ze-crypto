@@ -3,8 +3,8 @@ const axios = require('axios');
 //list the available
 //coin to get price
 const coinListForPrice = (bot) => {
-  return bot.hears('Show Prices', async (ctx) => {
-    await ctx.reply(`Choose a Crypto To know the Price`, {
+  return bot.hears('Show Prices', (ctx) => {
+    ctx.reply(`Choose a Crypto To know the Price`, {
       reply_markup: {
         inline_keyboard: [
           [
@@ -21,7 +21,6 @@ const coinListForPrice = (bot) => {
         ],
       },
     });
-    await ctx.answerCbQuery();
   });
 };
 
