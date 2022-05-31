@@ -42,7 +42,6 @@ const toWatchList = (bot) => {
         ],
       },
     });
-    ctx.answerCbQuery();
   });
 };
 
