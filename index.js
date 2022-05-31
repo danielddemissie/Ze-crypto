@@ -50,8 +50,4 @@ startWatchingCoin(bot, symbol, watchArr, followList, scale, API_KEY);
 myWatchList(bot, followList);
 stopWatchingCoin(bot, shouldStop, followList);
 
-//scale
-increaseScale(bot);
-decreaseScale(bot);
-
 module.exports = bot;
