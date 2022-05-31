@@ -85,14 +85,11 @@ const getTop10List = (bot, top10Coins, API_KEY) => {
                 callback_data: '9',
               },
             ],
-            [{ text: 'Back', callback_data: 'back-to-menu' }],
           ],
         },
       });
-      ctx.answerCbQuery();
     } catch (error) {
       console.log(error);
-      ctx.answerCbQuery();
     }
   });
 };

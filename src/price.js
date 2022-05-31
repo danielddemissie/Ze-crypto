@@ -17,7 +17,6 @@ const coinListForPrice = (bot) => {
             { text: 'Dogecoin Ð', callback_data: 'P_DOGE' },
           ],
           [{ text: '>', callback_data: 'P_more-coin' }],
-          [{ text: 'Back', callback_data: 'back-to-menu' }],
         ],
       },
     });
@@ -41,7 +40,6 @@ const morePriceList = (bot) => {
             { text: 'Filecoin ⨎', callback_data: 'P_FIL' },
           ],
           [{ text: '<', callback_data: 'price' }],
-          [{ text: 'Back', callback_data: 'back-to-menu' }],
         ],
       },
     });
@@ -83,13 +81,7 @@ const getPriceOfChoosedCoin = (bot, symbol, coinArr, API_KEY) => {
           `https://www.cryptocompare.com/${imageUrl}`
         );
         setTimeout(async () => {
-          await ctx.reply(sendData, {
-            reply_markup: {
-              inline_keyboard: [
-                [{ text: 'Back', callback_data: 'back-to-menu' }],
-              ],
-            },
-          });
+          await ctx.reply(sendData);
           ctx.answerCbQuery();
         }, 200);
       } catch (error) {}

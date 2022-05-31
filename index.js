@@ -9,7 +9,6 @@ const {
   morePriceList,
   getPriceOfChoosedCoin,
 } = require('./src/price');
-const { increaseScale, decreaseScale } = require('./src/scale');
 const {
   moreWatchList,
   myWatchList,
@@ -19,7 +18,6 @@ const {
 } = require('./src/watchCoin');
 const { priceArr, watchArr } = require('./src/coinListArr');
 const startBot = require('./src/start');
-const backToMenu = require('./src/backToMenu');
 
 //keys
 const API_KEY = process.env.API_KEY;
@@ -35,9 +33,6 @@ bot.use(session());
 
 //start bot
 startBot(bot);
-
-//back to main menu
-backToMenu(bot);
 
 //Price Section
 coinListForPrice(bot);

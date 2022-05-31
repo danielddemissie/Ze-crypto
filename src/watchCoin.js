@@ -10,28 +10,11 @@ const myWatchList = (bot, followList) => {
           ? (sendData = `${followList[username]}`)
           : '';
         ctx.reply(
-          `Hello ${username} these are your watchLsit : [ ${sendData} ]`,
-          {
-            reply_markup: {
-              inline_keyboard: [
-                [{ text: 'Back', callback_data: 'back-to-menu' }],
-              ],
-            },
-          }
+          `Hello ${username} these are your watchLsit : [ ${sendData} ]`
         );
       } else {
         ctx.reply(
-          `Hello ${username} you are not watching any coin currentlly...`,
-          {
-            reply_markup: {
-              inline_keyboard: [
-                [
-                  { text: 'watch Crypto', callback_data: 'follow' },
-                  { text: 'Back', callback_data: 'back-to-menu' },
-                ],
-              ],
-            },
-          }
+          `Hello ${username} you are not watching any coin currentlly...`
         );
       }
     } catch (error) {
@@ -56,7 +39,6 @@ const toWatchList = (bot) => {
             { text: 'Dogecoin Ð', callback_data: 'F_DOGE' },
           ],
           [{ text: '>', callback_data: 'F_more-coin' }],
-          [{ text: 'Back', callback_data: 'back-to-menu' }],
         ],
       },
     });
@@ -79,7 +61,6 @@ const moreWatchList = (bot) => {
             { text: 'Filecoin ⨎', callback_data: 'F_FIL' },
           ],
           [{ text: '<', callback_data: 'follow' }],
-          [{ text: 'Back', callback_data: 'back-to-menu' }],
         ],
       },
     });
@@ -102,14 +83,7 @@ const stopWatchingCoin = (bot, shouldStop, followList) => {
             ? (sendData = `${followList[username]}`)
             : '';
           await ctx.editMessageText(
-            `${symbol} coin is removed from your watchList\n#watchlist  [ ${sendData} ].`,
-            {
-              reply_markup: {
-                inline_keyboard: [
-                  [{ text: 'Back', callback_data: 'back-to-menu' }],
-                ],
-              },
-            }
+            `${symbol} coin is removed from your watchList\n#watchlist  [ ${sendData} ].`
           );
         }
       });
@@ -141,17 +115,7 @@ const startWatchingCoin = (
 
     //listen for price change
     try {
-      await ctx.reply(follMessage, {
-        reply_markup: {
-          inline_keyboard: [
-            [
-              { text: 'Increase Scale by 5', callback_data: 'I_5' },
-              { text: 'Decrease Scale by 5', callback_data: 'D_5' },
-            ],
-            [{ text: 'Back to Main Menu', callback_data: 'back-to-menu' }],
-          ],
-        },
-      });
+      await ctx.reply(follMessage);
       for (let i = 0; i < followList[username].length; i++) {
         let res = await axios.get(
           `https://min-api.cryptocompare.com/data/v2/histominute?fsym=${followList[username][i]}&tsym=USD&limit=10&api_key=${API_KEY}`
@@ -183,19 +147,9 @@ const startWatchingCoin = (
               reply_markup: {
                 inline_keyboard: [
                   [
-                    { text: 'Increase Scale by 5', callback_data: 'I_5' },
-                    { text: 'Decrease Scale by 5', callback_data: 'D_5' },
-                  ],
-                  [
                     {
                       text: 'Stop watching this coin ',
                       callback_data: 'F_stop',
-                    },
-                  ],
-                  [
-                    {
-                      text: 'Back to Main Menu',
-                      callback_data: 'back-to-menu',
                     },
                   ],
                 ],
@@ -218,19 +172,9 @@ const startWatchingCoin = (
             reply_markup: {
               inline_keyboard: [
                 [
-                  { text: 'Increase Scale by 5', callback_data: 'I_5' },
-                  { text: 'Decrease Scale by 5', callback_data: 'D_5' },
-                ],
-                [
                   {
                     text: 'Stop watching this coin ',
                     callback_data: 'F_stop',
-                  },
-                ],
-                [
-                  {
-                    text: 'Back to Main Menu',
-                    callback_data: 'back-to-menu',
                   },
                 ],
               ],
