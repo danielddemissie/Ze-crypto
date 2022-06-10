@@ -23,6 +23,7 @@
     "axios": "^0.27.2",
     "dotenv": "^16.0.1",
     "micro-bot": "^2.5.3",
+    "python-shell": "^3.0.1",
     "telegraf": "^3.34.0"
   },
   "devDependencies": {
