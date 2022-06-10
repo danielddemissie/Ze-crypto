@@ -1,4 +1,6 @@
 import yfinance as yf
+import os
+import plotly.graph_objects as go
 from datetime import date, timedelta
 today = date.today()
 d1 = today.strftime("%Y-%m-%d")
@@ -15,3 +17,16 @@ data["Date"] = data.index
 data = data[["Date", "Open", "High", "Low", "Close", "Adj Close", "Volume"]]
 data.reset_index(drop=True, inplace=True)
 print(data.head())
+
+
+figure = go.Figure(data=[go.Candlestick(x=data["Date"],
+                                        open=data["Open"], 
+                                        high=data["High"],
+                                        low=data["Low"], 
+                                        close=data["Close"])])
+figure.update_layout(title = "Bitcoin Price Analysis", 
+                     xaxis_rangeslider_visible=False)
+if not os.path.exists("images"):
+    os.mkdir("images")
+figure.write_image("images/fig1.png")    
+figure.show()
