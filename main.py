@@ -8,8 +8,9 @@ end_date = d1
 d2 = date.today() - timedelta(days=30)
 d2 = d2.strftime("%Y-%m-%d")
 start_date = d2
+coinName,userName=input().split("_");
 
-data = yf.download(input(), 
+data = yf.download(coinName, 
                       start=start_date, 
                       end=end_date, 
                       progress=False)
@@ -26,7 +27,7 @@ figure = go.Figure(data=[go.Candlestick(x=data["Date"],
                                         close=data["Close"])])
 figure.update_layout(title = "Bitcoin Price Analysis", 
                      xaxis_rangeslider_visible=False)
-if not os.path.exists("images"):
-    os.mkdir("images")
-figure.write_image("images/fig1.png")    
+if not os.path.exists("/public/images"):
+    os.mkdir("/public/images")
+figure.write_image('/public/images/'+userName+coinName+'.png')    
 figure.show()

@@ -1,11 +1,12 @@
 const Composer = require('telegraf/composer');
 const session = require('telegraf/session');
-const { PythonShell } = require('python-shell');
-let ps = new PythonShell('main.py');
+// const { PythonShell } = require('python-shell');
+// let ps = new PythonShell('main.py');
 
 require('dotenv').config();
 
 const { getTop10List, getPriceOfTopCoins } = require('./src/topCoins');
+const priceHistoryOf = require('./src/priceHistory');
 const {
   coinListForPrice,
   morePriceList,
@@ -33,19 +34,19 @@ let shouldStop = false;
 const bot = new Composer();
 bot.use(session());
 
-ps.send('BTC-USD');
+// ps.send('BTC-USD');
 
-ps.on('message', (msg) => {
-  console.log(msg);
-});
+// ps.on('message', (msg) => {
+//   console.log(msg);
+// });
 
-ps.end(function (err) {
-  if (err) {
-    console.log('error');
-  } else {
-    console.log('success.');
-  }
-});
+// ps.end(function (err) {
+//   if (err) {
+//     console.log('error');
+//   } else {
+//     console.log('success.');
+//   }
+// });
 
 //start bot
 startBot(bot);
@@ -65,5 +66,8 @@ moreWatchList(bot);
 startWatchingCoin(bot, symbol, watchArr, followList, scale, API_KEY);
 myWatchList(bot, followList);
 stopWatchingCoin(bot, shouldStop, followList);
+
+//history
+priceHistoryOf(bot);
 
 module.exports = bot;

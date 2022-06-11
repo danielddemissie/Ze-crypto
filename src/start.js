@@ -6,6 +6,7 @@ const startBot = (bot) => {
         keyboard: [
           ['Show Prices', 'Watch Crypto'],
           ['Popular', 'My Watch List'],
+          ['Price History', 'Predict Coin'],
         ],
         one_time_keyboard: false,
         resize_keyboard: true,
